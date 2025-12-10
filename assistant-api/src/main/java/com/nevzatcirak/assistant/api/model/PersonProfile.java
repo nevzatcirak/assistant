@@ -7,6 +7,8 @@ public record PersonProfile(
     String firstName,
     String lastName,
     String role,
+    String email,
+    String phoneNumber,
     String linkedinUrl,
     String linkedinDataPath,
     String cvPath

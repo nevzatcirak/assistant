@@ -31,7 +31,7 @@ public class GeminiLlmAdapter implements LlmPort {
      */
     public GeminiLlmAdapter(ChatClient.Builder builder, ChatMemory chatMemory) {
         this.chatClient = builder
-                .defaultSystem("Sen yardımsever bir asistansın.")
+                .defaultSystem("You are a helpful and professional assistant.") // Translated
                 .defaultAdvisors(new MessageChatMemoryAdvisor(chatMemory))
                 .build();
     }

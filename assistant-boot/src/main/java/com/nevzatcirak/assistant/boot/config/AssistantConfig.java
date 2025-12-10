@@ -33,6 +33,12 @@ public class AssistantConfig {
     @Value("${assistant.person.role}")
     private String role;
 
+    @Value("${assistant.person.email}")
+    private String email;
+
+    @Value("${assistant.person.phoneNumber}")
+    private String phoneNumber;
+
     @Value("${assistant.person.linkedin-url}")
     private String linkedinUrl;
 
@@ -54,7 +60,7 @@ public class AssistantConfig {
 
     @Bean
     public PersonProfile personProfile() {
-        return new PersonProfile(firstName, lastName, role, linkedinUrl, linkedinDataPath, cvPath);
+        return new PersonProfile(firstName, lastName, role, email, phoneNumber, linkedinUrl, linkedinDataPath, cvPath);
     }
 
     @Bean
@@ -74,7 +80,7 @@ public class AssistantConfig {
     @Bean
     public CommandLineRunner init(DataIngestionUseCase ingestionUseCase, PersonProfile profile) {
         return args -> {
-            logger.info("--- Booting Assistant for: {} ---", profile.getFullName());
+            logger.info("--- Booting NEVA Assistant for: {} ---", profile.getFullName());
             ingestionUseCase.ingestInitialData(profile);
             logger.info("--- Initialization Complete ---");
         };
