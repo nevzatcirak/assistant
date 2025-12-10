@@ -1,0 +1,16 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.nevzatcirak.assistant</groupId>
+        <artifactId>assistant-parent</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+    <artifactId>assistant-adapter</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>assistant-ai-gemini</module>
+        <module>assistant-vectordb</module>
+        <module>assistant-document-reader</module>
+        <module>assistant-controller-rest</module>
+    </modules>
+</project>

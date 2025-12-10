@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: assistant-boot
+  main:
+    banner-mode: off
+  ai:
+    openai:
+      base-url: https://generativelanguage.googleapis.com/v1beta/openai/
+      api-key:
+      embedding:
+        options:
+            model: text-embedding-004
+      chat:
+        options:
+          model: gemini-2.0-flash
+          temperature: 0.3
+
+# --- Custom Domain Configuration Group ---
+assistant:
+  person:
+    first-name: Nevzat
+    last-name: Cirak
+    role: Senior Software Engineer
+    linkedin-url: https://www.linkedin.com/in/nevzatcirak
+    cv-path: classpath:documents/nevzat_cv.pdf

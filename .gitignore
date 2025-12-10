@@ -22,3 +22,11 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 replay_pid*
+
+.idea
+.qodo
+**/*/target/
+
+project_code_context.sh
+project_code_context.txt
+gemini.sh
