@@ -8,6 +8,7 @@ public record PersonProfile(
     String lastName,
     String role,
     String linkedinUrl,
+    String linkedinDataPath,
     String cvPath
 ) {
     public String getFullName() {

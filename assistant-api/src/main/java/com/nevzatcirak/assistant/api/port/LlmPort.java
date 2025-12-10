@@ -3,5 +3,5 @@ import com.nevzatcirak.assistant.api.model.AssistantResponse;
 import com.nevzatcirak.assistant.api.model.UserQuery;
 
 public interface LlmPort {
-    AssistantResponse generate(String systemPrompt, UserQuery query);
+    AssistantResponse generate(String conversationId, String systemPrompt, UserQuery query);
 }

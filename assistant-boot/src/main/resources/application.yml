@@ -20,6 +20,7 @@ assistant:
   person:
     first-name: Nevzat
     last-name: Cirak
-    role: Senior Software Engineer
+    role: Lead Software Engineer
     linkedin-url: https://www.linkedin.com/in/nevzatcirak
+    linkedin-data-path: classpath:documents/linkedin.pdf
     cv-path: classpath:documents/nevzat_cv.pdf

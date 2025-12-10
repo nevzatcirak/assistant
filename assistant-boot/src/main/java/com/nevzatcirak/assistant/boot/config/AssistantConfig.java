@@ -4,6 +4,10 @@ import com.nevzatcirak.assistant.api.model.PersonProfile;
 import com.nevzatcirak.assistant.api.port.*;
 import com.nevzatcirak.assistant.core.usecase.ChatUseCase;
 import com.nevzatcirak.assistant.core.usecase.DataIngestionUseCase;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.ai.chat.memory.ChatMemory;
+import org.springframework.ai.chat.memory.InMemoryChatMemory;
 import org.springframework.ai.embedding.EmbeddingModel;
 import org.springframework.ai.vectorstore.SimpleVectorStore;
 import org.springframework.ai.vectorstore.VectorStore;
@@ -12,10 +16,15 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+/**
+ * Spring Boot Configuration class for wiring beans and setting up the application context.
+ */
 @Configuration
 public class AssistantConfig {
 
-    @Value("${assistant.person.first-name}")
+    private static final Logger logger = LoggerFactory.getLogger(AssistantConfig.class);
+
+    @Value("{assistant.person.first-name}")
     private String firstName;
 
     @Value("${assistant.person.last-name}")
@@ -27,8 +36,16 @@ public class AssistantConfig {
     @Value("${assistant.person.linkedin-url}")
     private String linkedinUrl;
 
+    @Value("${assistant.person.linkedin-data-path}")
+    private String linkedinDataPath;
+
     @Value("${assistant.person.cv-path}")
     private String cvPath;
+
+    @Bean
+    public ChatMemory chatMemory() {
+        return new InMemoryChatMemory();
+    }
 
     @Bean
     public VectorStore vectorStore(EmbeddingModel embeddingModel) {
@@ -37,7 +54,7 @@ public class AssistantConfig {
 
     @Bean
     public PersonProfile personProfile() {
-        return new PersonProfile(firstName, lastName, role, linkedinUrl, cvPath);
+        return new PersonProfile(firstName, lastName, role, linkedinUrl, linkedinDataPath, cvPath);
     }
 
     @Bean
@@ -50,12 +67,16 @@ public class AssistantConfig {
         return new DataIngestionUseCase(reader, store);
     }
 
+    /**
+     * Initializes the application data on startup.
+     * Ingests CV and LinkedIn data into the in-memory vector store.
+     */
     @Bean
     public CommandLineRunner init(DataIngestionUseCase ingestionUseCase, PersonProfile profile) {
         return args -> {
-            System.out.println("--- Booting Assistant for: " + profile.getFullName() + " ---");
+            logger.info("--- Booting Assistant for: {} ---", profile.getFullName());
             ingestionUseCase.ingestInitialData(profile);
-            System.out.println("--- Initialization Complete ---");
+            logger.info("--- Initialization Complete ---");
         };
     }
 }
