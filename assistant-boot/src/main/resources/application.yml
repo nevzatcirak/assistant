@@ -23,6 +23,6 @@ assistant:
     role: Lead Software Engineer
     email:
     phoneNumber:
-    linkedin-url:
+    linkedin-url: https://www.linkedin.com/in/nevzatcirak
     linkedin-data-path: classpath:documents/Profile.csv
     cv-path: classpath:documents/nevzat_cv.pdf

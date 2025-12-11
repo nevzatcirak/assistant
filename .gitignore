@@ -27,8 +27,8 @@ replay_pid*
 .qodo
 **/*/target/
 
+application-local.yml
+
 project_code_context.sh
 project_code_context.txt
 gemini.sh
-
-*-local.yml
