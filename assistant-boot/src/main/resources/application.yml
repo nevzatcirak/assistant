@@ -21,8 +21,8 @@ assistant:
     first-name: Nevzat
     last-name: Cirak
     role: Lead Software Engineer
-    email: nevzatcirak17@gmail.com
-    phoneNumber: +90 (542) 438 56 93
-    linkedin-url: https://www.linkedin.com/in/nevzatcirak
+    email:
+    phoneNumber:
+    linkedin-url:
     linkedin-data-path: classpath:documents/Profile.csv
     cv-path: classpath:documents/nevzat_cv.pdf
