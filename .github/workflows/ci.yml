@@ -40,4 +40,4 @@ jobs:
             --projects assistant-boot \
             -Djib.to.image=nevzatcirak/neva-assistant:latest \
             -Djib.from.image=eclipse-temurin:21-jre \
-            -Djib.platforms=linux/amd64
+            -Djib.platforms=linux/amd64,linux/arm64
