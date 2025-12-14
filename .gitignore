@@ -28,6 +28,7 @@ replay_pid*
 **/*/target/
 
 application-local.yml
+docker-compose.yml
 
 project_code_context.sh
 project_code_context.txt

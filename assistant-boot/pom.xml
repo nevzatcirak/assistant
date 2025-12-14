@@ -7,6 +7,10 @@
     </parent>
     <artifactId>assistant-boot</artifactId>
 
+    <properties>
+        <image.name>neva-assistant</image.name>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>com.nevzatcirak.assistant</groupId>
@@ -53,13 +57,17 @@
             <plugin>
                 <groupId>com.google.cloud.tools</groupId>
                 <artifactId>jib-maven-plugin</artifactId>
-                <version>3.4.0</version>
+                <version>3.5.0</version>
                 <configuration>
                     <from>
                         <image>eclipse-temurin:21-jre</image>
                     </from>
                     <to>
-                        <image>neva-assistant:latest</image>
+                        <image>nevzatcirak/${image.name}:${project.version}</image>
+                        <tags>
+                            <tag>${project.version}</tag>
+                            <tag>latest</tag>
+                        </tags>
                     </to>
                     <container>
                         <mainClass>com.nevzatcirak.assistant.boot.AssistantApplication</mainClass>

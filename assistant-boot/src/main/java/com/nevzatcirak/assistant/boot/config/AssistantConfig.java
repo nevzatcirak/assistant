@@ -24,7 +24,7 @@ public class AssistantConfig {
 
     private static final Logger logger = LoggerFactory.getLogger(AssistantConfig.class);
 
-    @Value("{assistant.person.first-name}")
+    @Value("${assistant.person.first-name}")
     private String firstName;
 
     @Value("${assistant.person.last-name}")
