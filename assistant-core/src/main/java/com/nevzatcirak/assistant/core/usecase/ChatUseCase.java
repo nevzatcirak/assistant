@@ -1,7 +1,10 @@
 package com.nevzatcirak.assistant.core.usecase;
 
-import com.nevzatcirak.assistant.api.model.*;
-import com.nevzatcirak.assistant.api.port.*;
+import com.nevzatcirak.assistant.api.model.AssistantResponse;
+import com.nevzatcirak.assistant.api.model.PersonProfile;
+import com.nevzatcirak.assistant.api.model.UserQuery;
+import com.nevzatcirak.assistant.api.port.LlmPort;
+import com.nevzatcirak.assistant.api.port.VectorStorePort;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

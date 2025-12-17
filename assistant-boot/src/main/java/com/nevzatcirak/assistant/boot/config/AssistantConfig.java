@@ -1,7 +1,9 @@
 package com.nevzatcirak.assistant.boot.config;
 
 import com.nevzatcirak.assistant.api.model.PersonProfile;
-import com.nevzatcirak.assistant.api.port.*;
+import com.nevzatcirak.assistant.api.port.DocumentReaderPort;
+import com.nevzatcirak.assistant.api.port.LlmPort;
+import com.nevzatcirak.assistant.api.port.VectorStorePort;
 import com.nevzatcirak.assistant.core.usecase.ChatUseCase;
 import com.nevzatcirak.assistant.core.usecase.DataIngestionUseCase;
 import org.slf4j.Logger;
