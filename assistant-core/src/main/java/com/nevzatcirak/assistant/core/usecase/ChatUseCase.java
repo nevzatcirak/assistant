@@ -85,6 +85,7 @@ public class ChatUseCase {
             personProfile.firstName(),
             personProfile.getFullName(),
             personProfile.email(),
+            personProfile.getFullName(),
             personProfile.email(),
             //personProfile.phoneNumber(),
             context
