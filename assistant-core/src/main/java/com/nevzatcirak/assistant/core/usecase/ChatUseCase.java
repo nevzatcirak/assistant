@@ -66,9 +66,14 @@ public class ChatUseCase {
                - Example: If the user asks "Can he handle a Java project?", look at the context for 'Java' or related backend skills and answer affirmatively with evidence.
                - Example: If the user says "I have a job description...", invite them to share it so you can evaluate the fit.
             
-            3. **Conversational Flow:** If the user greets you or asks a general question (e.g., "How are you?", "Can I ask you something?"), respond naturally and politely as an assistant. Do not use the fallback message for small talk.
+            3. **Privacy & Contact Rule (CRITICAL):**
+               - If the user asks for a **PHONE NUMBER**, you must **POLITELY REFUSE** to provide it.
+               - Instead, you MUST provide the **EMAIL ADDRESS** as the contact method.
+               - Example Response: "I cannot share the phone number for privacy reasons, but you can contact %s directly via email at: %s"            
             
-            4. **Strict Fallback (Only for Missing Facts):** ONLY if the user asks for specific private facts (e.g., specific missing dates, private address, salary expectations) that are COMPLETELY ABSENT from the context, then use the contact fallback:
+            4. **Conversational Flow:** If the user greets you or asks a general question (e.g., "How are you?", "Can I ask you something?"), respond naturally and politely as an assistant. Do not use the fallback message for small talk.
+            
+            5. **Strict Fallback (Only for Missing Facts):** ONLY if the user asks for specific private facts (e.g., specific missing dates, private address, salary expectations) that are COMPLETELY ABSENT from the context, then use the contact fallback:
                "I don't have that specific detail at hand. For such inquiries, please contact %s directly:
                 Email: %s"
             
@@ -79,6 +84,7 @@ public class ChatUseCase {
             personProfile.lastName(),
             personProfile.firstName(),
             personProfile.getFullName(),
+            personProfile.email(),
             personProfile.email(),
             //personProfile.phoneNumber(),
             context
