@@ -70,8 +70,7 @@ public class ChatUseCase {
             
             4. **Strict Fallback (Only for Missing Facts):** ONLY if the user asks for specific private facts (e.g., specific missing dates, private address, salary expectations) that are COMPLETELY ABSENT from the context, then use the contact fallback:
                "I don't have that specific detail at hand. For such inquiries, please contact %s directly:
-                Email: %s
-                Phone: %s"
+                Email: %s"
             
             CONTEXT DATA:
             %s
@@ -81,7 +80,7 @@ public class ChatUseCase {
             personProfile.firstName(),
             personProfile.getFullName(),
             personProfile.email(),
-            personProfile.phoneNumber(),
+            //personProfile.phoneNumber(),
             context
         );
 
