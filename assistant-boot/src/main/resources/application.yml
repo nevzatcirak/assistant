@@ -25,4 +25,4 @@ assistant:
     phoneNumber:
     linkedin-url: https://www.linkedin.com/in/nevzatcirak
     linkedin-data-path: classpath:documents/Profile.csv
-    cv-path: classpath:documents/nevzat_cv.pdf
+    cv-path: classpath:documents/CV.pdf

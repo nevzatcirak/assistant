@@ -19,7 +19,7 @@
 * **Language:** Java 21
 * **Framework:** Spring Boot 3.4.0
 * **AI Framework:** Spring AI 1.0.0-M6
-* **LLM:** Google Gemini 1.5 Flash (via OpenAI Compatibility Layer)
+* **LLM:** Google Gemini 2.0 Flash (via OpenAI Compatibility Layer)
 * **Embedding Model:** `all-MiniLM-L6-v2` (Local Transformer, runs on CPU)
 * **Vector Store:** SimpleVectorStore (In-Memory)
 * **Document Reader:** Apache Tika
@@ -49,7 +49,7 @@ You must configure your API key and personal details in the `application.propert
 spring.ai.openai.base-url=[https://generativelanguage.googleapis.com/v1beta/openai/](https://generativelanguage.googleapis.com/v1beta/openai/)
 # REPLACE WITH YOUR ACTUAL API KEY
 spring.ai.openai.api-key=AIzaSyYourKeyHere...
-spring.ai.openai.chat.options.model=gemini-1.5-flash-001
+spring.ai.openai.chat.options.model=gemini-2.0-flash-001
 
 # Persona Configuration
 assistant.person.first-name=Nevzat
