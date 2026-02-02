@@ -11,7 +11,7 @@ echo "" >> "$OUTPUT_FILE"
 # 'target' klasörlerini HARIÇ TUT (Derlenmiş dosyalar)
 # '.git' klasörünü HARIÇ TUT
 # 'src/test' klasörünü HARIÇ TUT (Sadece ana kodları alalım)
-find . -type f -name "*.java" \
+find . -type f \( -name "*.java" -o -name "*.xml" \) \
   ! -path "*/target/*" \
   ! -path "*/.git/*" \
   ! -path "*/src/test/*" | sort | while read -r file; do

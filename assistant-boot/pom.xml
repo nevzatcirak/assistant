@@ -3,7 +3,7 @@
     <parent>
         <groupId>com.nevzatcirak.assistant</groupId>
         <artifactId>assistant-parent</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
+        <version>0.0.2-SNAPSHOT</version>
     </parent>
     <artifactId>assistant-boot</artifactId>
 
@@ -82,6 +82,20 @@
                             <port>8080</port>
                         </ports>
                     </container>
+                    <extraDirectories>
+                        <paths>
+                            <path>
+                                <from>../mcp-bin/linux</from>
+                                <into>/app/mcp-bin</into>
+                            </path>
+                        </paths>
+                        <permissions>
+                            <permission>
+                                <file>/app/mcp-bin/github-mcp-server</file>
+                                <mode>755</mode>
+                            </permission>
+                        </permissions>
+                    </extraDirectories>
                 </configuration>
             </plugin>
         </plugins>

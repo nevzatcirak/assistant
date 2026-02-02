@@ -3,7 +3,7 @@
     <parent>
         <groupId>com.nevzatcirak.assistant</groupId>
         <artifactId>assistant-adapter</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
+        <version>0.0.2-SNAPSHOT</version>
     </parent>
     <artifactId>assistant-document-reader</artifactId>
     <dependencies>
