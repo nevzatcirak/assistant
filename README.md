@@ -8,7 +8,7 @@
 
 ## 🚀 Key Features
 
-* **Hybrid AI Architecture:** Uses **Google Gemini 1.5 Flash** for chat generation (via OpenAI Adapter) and **Local ONNX Models** for vector embeddings to ensure zero-cost operation on the Free Tier.
+* **Hybrid AI Architecture:** Uses **Google Gemini 2.0 Flash** for chat generation and **Gemini Embeddings Models** for vector embeddings to ensure zero-cost operation on the Free Tier.
 * **RAG (Retrieval Augmented Generation):** Ingests CV (PDF/TXT) and LinkedIn data, converting them into vector embeddings for context-aware answers.
 * **Conversational Memory:** Remembers the context of the chat session, allowing follow-up questions (e.g., "What was his role there?").
 * **Smart Persona (NEVA):** Configured with a specific system prompt to act as a professional representative, capable of inferring skills and handling missing information gracefully.
@@ -17,10 +17,11 @@
 ## 🛠 Tech Stack
 
 * **Language:** Java 21
-* **Framework:** Spring Boot 3.4.0
-* **AI Framework:** Spring AI 1.0.0-M6
-* **LLM:** Google Gemini 2.0 Flash (via OpenAI Compatibility Layer)
-* **Embedding Model:** `all-MiniLM-L6-v2` (Local Transformer, runs on CPU)
+* **Framework:** Spring Boot 4.0.1
+* **AI Framework:** Spring AI 2.0.0-M2
+* **LLM:** Google Gemini 2.0 Flash
+* **Embedding Model:** `gemini-embedding-001` (Local Transformer, runs on CPU)
+* **MCPs:** Github MCP Server
 * **Vector Store:** SimpleVectorStore (In-Memory)
 * **Document Reader:** Apache Tika
 * **Build Tool:** Maven
@@ -40,16 +41,16 @@ The project is divided into multi-modules to enforce architectural boundaries:
 
 ## ⚙️ Configuration
 
-The application requires a **Google Gemini API Key**. It uses the OpenAI compatibility layer provided by Spring AI to communicate with Gemini.
+The application requires a **Google Gemini API Key**. 
 
 You must configure your API key and personal details in the `application.properties` file located at `assistant-boot/src/main/resources/application.properties`.
 
 ```properties
-# Google Gemini (via OpenAI Adapter)
-spring.ai.openai.base-url=[https://generativelanguage.googleapis.com/v1beta/openai/](https://generativelanguage.googleapis.com/v1beta/openai/)
-# REPLACE WITH YOUR ACTUAL API KEY
-spring.ai.openai.api-key=AIzaSyYourKeyHere...
-spring.ai.openai.chat.options.model=gemini-2.0-flash-001
+spring.ai.google.genai.api-key=AIzaSyYourKeyHere...
+spring.ai.google.genai.project-id=gen-lang-client...
+spring.ai.google.genai.embedding.api-key=AIzaSyYourKeyHere...
+spring.ai.google.genai.embedding.project-id=gen-lang-client...
+spring.ai.google.genai.chat.options.model=gemini-2.0-flash
 
 # Persona Configuration
 assistant.person.first-name=Nevzat
