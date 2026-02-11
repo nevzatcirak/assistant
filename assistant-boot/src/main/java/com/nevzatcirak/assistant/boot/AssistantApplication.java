@@ -10,7 +10,7 @@ import org.springframework.context.annotation.ComponentScan;
         DataSourceAutoConfiguration.class,
         PgVectorStoreAutoConfiguration.class
 })
-@ComponentScan(basePackages = {"com.nevzatcirak.assistant", "org.springframework.ai.tool", "org.springframework.ai.mcp"})
+@ComponentScan(basePackages = {"com.nevzatcirak.assistant", "org.springframework.ai.tool", "org.springframework.ai.mcp", "org.springframework.ai.google"})
 public class AssistantApplication {
     public static void main(String[] args) {
         SpringApplication.run(AssistantApplication.class, args);

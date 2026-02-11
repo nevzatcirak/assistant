@@ -16,17 +16,20 @@ spring:
                 - "stdio"
               env:
                 "GITHUB_PERSONAL_ACCESS_TOKEN": ${GITHUB_PERSONAL_ACCESS_TOKEN}
-    openai:
-      base-url: https://generativelanguage.googleapis.com/v1beta/openai/
-      api-key:
-      embedding:
-        options:
-            model: text-embedding-3-large
-      chat:
-        options:
-          model: gemini-2.0-flash
-          temperature: 0.3
-
+    google:
+      genai:
+        api-key: ${GOOGLE_AI_STUDIO_API_KEY}
+        project-id: ${GOOGLE_AI_STUDIO_PROJECT_ID}
+        chat:
+          options:
+            model: gemini-2.0-flash
+            temperature: 0.3
+        embedding:
+          api-key: ${GOOGLE_AI_STUDIO_API_KEY}
+          project-id: ${GOOGLE_AI_STUDIO_PROJECT_ID}
+          text:
+            options:
+              model: gemini-embedding-001
 # --- Custom Domain Configuration Group ---
 assistant:
   person:
